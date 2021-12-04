@@ -43,5 +43,20 @@ public class Main
                 infoMayor = tercero;
             }
         }
+        System.out.println("El info mayor de los tres primeros es : "+infoMayor);
+
+        //Calcular El producto del Info de los Dos Ultimos(p4 y p5)
+
+        int cuarto , quinto , producto;
+
+        cuarto = p4.GetNumero();
+        quinto = p5.GetNumero();
+
+        producto = cuarto * quinto;
+        System.out.println("El producto de los Dos ultimos es : "+producto);
+
+
+
+
     }
 }
