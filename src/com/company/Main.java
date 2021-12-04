@@ -25,5 +25,23 @@ public class Main
         p2.SetNumero(auxiliar);
 
         System.out.println(" p1: "+p1.GetNumero()+" p2: "+p2.GetNumero());
+
+        //Buscar el info Mayor de los Tres primero (p1,p2 y p3)
+        int primero, segundo , tercero , infoMayor;
+        primero = p1.GetNumero();
+        segundo = p2.GetNumero();
+        tercero = p3.GetNumero();
+        if(primero > segundo && primero > tercero)
+        {
+            infoMayor = primero;
+        }
+        else
+        {
+            if(segundo > tercero){
+                infoMayor = segundo;
+            }else{
+                infoMayor = tercero;
+            }
+        }
     }
 }
