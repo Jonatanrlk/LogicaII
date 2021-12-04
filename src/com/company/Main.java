@@ -55,6 +55,13 @@ public class Main
         producto = cuarto * quinto;
         System.out.println("El producto de los Dos ultimos es : "+producto);
 
+        //Ligar los cinco nodos
+        p1.SetLiga(p2);
+        p2.SetLiga(p3);
+        p3.SetLiga(p4);
+        p4.SetLiga(p5);
+
+
 
 
 
