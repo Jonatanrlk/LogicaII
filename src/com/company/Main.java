@@ -71,12 +71,13 @@ public class Main
 
 
         //Mostrar el info de de cada nodo
+        System.out.println("e) Imprimir la lista Ligada");
 
         while(p != null)
         {
             System.out.print(" "+p.GetNumero());
             p = p.GetLiga();
         }
-
+        System.out.println();
     }
 }
