@@ -1,1 +1,3 @@
-Logica II , Codigo Ejercicios de la clase
+Logica II
+
+Ejercicios de Clases y Practica.
