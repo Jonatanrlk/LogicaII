@@ -1,5 +1,7 @@
 package com.company;
 
+import java.sql.SQLOutput;
+
 public class Main
 {
 
@@ -33,7 +35,7 @@ public class Main
         primero = p1.GetNumero();
         segundo = p2.GetNumero();
         tercero = p3.GetNumero();
-        System.out.println("b)Buscar el info mayor de los los tres primeros ");
+
         if(primero > segundo && primero > tercero)
         {
             infoMayor = primero;
@@ -45,7 +47,9 @@ public class Main
                 infoMayor = tercero;
             }
         }
+        System.out.println("b) El info mayor de los primero 3 es : "+infoMayor);
 
+        System.out.println();
         //Calcular El producto del Info de los Dos Ultimos(p4 y p5)
 
         int cuarto , quinto , producto;
@@ -54,7 +58,7 @@ public class Main
         quinto = p5.GetNumero();
 
         producto = cuarto * quinto;
-        System.out.println("El producto de los Dos ultimos es : "+producto);
+        System.out.println("c) El producto de los Dos ultimos es : "+producto);
 
         System.out.println();
         //Ligar los cinco nodos
