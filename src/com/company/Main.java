@@ -61,6 +61,21 @@ public class Main
         p3.SetLiga(p4);
         p4.SetLiga(p5);
 
+        // null a mis variables p1,p2,p3,p4
+
+        Nodo p = p1.GetLiga();
+
+        p1 = p2 = p3 = p4 = p5 = null;
+
+
+        //Mostrar el info de de cada nodo
+
+        while(p != null)
+        {
+            System.out.println(""+p.GetNumero());
+            p = p.GetLiga();
+        }
+
 
 
 
