@@ -17,33 +17,34 @@ public class Main
         p5 = new Nodo(9);
 
         System.out.println(" p1 : "+p1.GetNumero()+" p2: "+p2.GetNumero());
+        System.out.println();
 
         // a) Intercambiar de Info a los dos primeros
 
         auxiliar = p1.GetNumero();
         p1.SetNumero(p2.GetNumero());
         p2.SetNumero(auxiliar);
-
+        System.out.println("a) Intercambiar info de los dos primeros ");
         System.out.println(" p1: "+p1.GetNumero()+" p2: "+p2.GetNumero());
 
+        System.out.println();
         //Buscar el info Mayor de los Tres primero (p1,p2 y p3)
         int primero, segundo , tercero , infoMayor;
         primero = p1.GetNumero();
         segundo = p2.GetNumero();
         tercero = p3.GetNumero();
+        System.out.println("b)Buscar el info mayor de los los tres primeros ");
         if(primero > segundo && primero > tercero)
         {
             infoMayor = primero;
         }
-        else
-        {
-            if(segundo > tercero){
+        else {
+            if (segundo > tercero) {
                 infoMayor = segundo;
-            }else{
+            } else {
                 infoMayor = tercero;
             }
         }
-        System.out.println("El info mayor de los tres primeros es : "+infoMayor);
 
         //Calcular El producto del Info de los Dos Ultimos(p4 y p5)
 
@@ -55,6 +56,7 @@ public class Main
         producto = cuarto * quinto;
         System.out.println("El producto de los Dos ultimos es : "+producto);
 
+        System.out.println();
         //Ligar los cinco nodos
         p1.SetLiga(p2);
         p2.SetLiga(p3);
@@ -63,7 +65,7 @@ public class Main
 
         // null a mis variables p1,p2,p3,p4
 
-        Nodo p = p1.GetLiga();
+        Nodo p = p1;
 
         p1 = p2 = p3 = p4 = p5 = null;
 
@@ -72,13 +74,9 @@ public class Main
 
         while(p != null)
         {
-            System.out.println(""+p.GetNumero());
+            System.out.print(" "+p.GetNumero());
             p = p.GetLiga();
         }
-
-
-
-
 
     }
 }
