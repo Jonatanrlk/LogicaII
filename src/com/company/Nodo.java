@@ -2,22 +2,22 @@ package com.company;
 
 public class Nodo
 {
-    private int numero;
+    private char letra;
     private Nodo liga;
 
-    public Nodo(int pNumero)//Constructor
+    public Nodo(char pLetra)//Constructor
     {
-        numero = pNumero;
+        letra = pLetra;
         liga = null;
     }
 
-    public int GetNumero()
+    public char GetLetra()
     {
-        return numero;
+        return letra;
     }
-    public void SetNumero(int pNumero)
+    public void SetLetra(char pLetra)
     {
-        numero = pNumero;
+        letra = pLetra;
     }
 
 
