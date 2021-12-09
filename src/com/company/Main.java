@@ -34,7 +34,7 @@ public class Main
         k.SetLiga(z);
         z.SetLiga(w);
         Nodo p = y;
-        System.out.println("Lista con un Nodo Insectado");
+        System.out.println("Lista con un Nodo Insertado");
         MostrarLista(p);
 
         System.out.println();
@@ -44,7 +44,17 @@ public class Main
 
         // Elminar un Nodo
         Nodo m = null ; // m es la variable que guardara la direcion de memoria del anterior Nodo
-        Nodo s = y;
+
+        Nodo s = y; // para buscar el dato 'r'
+        while(s.GetLetra() != 'r')
+        {
+            m = s;
+            s = s.GetLiga(); // para que valla pasando de nodo a nodo
+        }
+        m.SetLiga(s.GetLiga());
+        System.out.println("Lista con Dato Eliminado");
+        Nodo o = y;// para mostrar la lista
+        MostrarLista(o);
 
         System.out.println();
 
