@@ -22,41 +22,40 @@ public class Main
         z.SetLiga(w);
 
         // Mostrar Lista
-//        Nodo p = y;
-//        while(p != null)
-//        {
-//            System.out.print(" "+" "+p.GetLetra());
-//            p = p.GetLiga();
-//        }
+        Nodo r = y;
+        System.out.println("Lista Original");
+        MostrarLista(r);  // subprograma para mostrar la lista
 
+        System.out.println();
         //Insectar Nuevo Nodo( k es el nuevo Nodo)
         y.SetLiga(x);
         x.SetLiga(v);
         v.SetLiga(k);
         k.SetLiga(z);
         z.SetLiga(w);
-//        Nodo p = y;
-//        while(p != null)
-//        {
-//            System.out.print(" "+" "+p.GetLetra());
-//            p = p.GetLiga();
-//        }
+        Nodo p = y;
+        System.out.println("Lista con un Nodo Insectado");
+        MostrarLista(p);
+
+        System.out.println();
         // Asignar null a la variables de Tipo Nodo (x,v,k,z,w)las cuales almacenan la dirreccion de memoria de cada Nodo
 
         x = v = k = z = w = null;
 
-        // Desligar un Nodo
+        // Elminar un Nodo
         Nodo m = null ; // m es la variable que guardara la direcion de memoria del anterior Nodo
-        Nodo p = y;
-        while(p.GetLetra() != 'r')
-        {
-            m = p;
-            p = p.GetLiga(); // para que valla pasando de nodo a nodo
-        }
-        m.SetLiga(p.GetLiga());
+        Nodo s = y;
 
-
-
+        System.out.println();
 
     }
+    public static void MostrarLista(Nodo pointer)
+    {
+        while(pointer != null)
+        {
+            System.out.print(" "+pointer.GetLetra());
+            pointer = pointer.GetLiga();
+        }
+    }
+
 }
