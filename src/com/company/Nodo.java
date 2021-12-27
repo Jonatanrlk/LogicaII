@@ -6,9 +6,9 @@ public class Nodo {
     private Nodo liga;
 
     //Constructor
-    public Nodo(int pNumero)
+    public Nodo(int parametroNumero)
     {
-        numero = pNumero;
+        numero = parametroNumero;
         liga = null;
     }
 
