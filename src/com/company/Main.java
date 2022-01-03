@@ -69,7 +69,7 @@ public class Main
 
         // null a mis variables p1,p2,p3,p4
 
-        Nodo p = p1;
+        Nodo pointer = p1;
 
         p1 = p2 = p3 = p4 = p5 = null;
 
@@ -77,10 +77,10 @@ public class Main
         //Mostrar el info de de cada nodo
         System.out.println("e) Imprimir la lista Ligada");
 
-        while(p != null)
+        while(pointer != null)
         {
-            System.out.print(" "+p.GetNumero());
-            p = p.GetLiga();
+            System.out.print(" "+pointer.GetNumero());
+            pointer = pointer.GetLiga();
         }
         System.out.println();
 
