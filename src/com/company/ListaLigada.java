@@ -10,4 +10,11 @@ public class ListaLigada
         ultimo = cabeza;
     }
 
+    public void crearListaLigada(int parametroNumero)
+    {
+        Nodo pointer = new Nodo(parametroNumero);
+        ultimo.SetLiga(pointer);
+        ultimo = pointer;
+    }
+
 }
