@@ -28,4 +28,20 @@ public class ListaLigada
         }
         return x.GetNumero();
     }
+
+    public void EliminarMenor()
+    {
+
+    }
+    public int ContarNegativos(){
+        Nodo pointer =  cabeza.GetLiga();
+        int contador=0 ;
+        while(pointer==null){
+            if(pointer.GetNumero()<0){
+                ++contador;
+            }
+            pointer = pointer.GetLiga();
+        }
+        return contador;
+    }
 }
