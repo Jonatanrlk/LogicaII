@@ -31,9 +31,18 @@ public class ListaLigada
 
     public void EliminarMenor()
     {
-
+        Nodo pointer = cabeza.GetLiga();
+        int menor = pointer.GetNumero();
+        while(pointer == null)
+        {
+            if(pointer.GetLiga().GetNumero() < menor)
+            {
+                menor = pointer.GetLiga().GetNumero();
+                break;
+            }
+        }
     }
-    public int ContarNegativos(){
+    public int ContadorNegativos(){
         Nodo pointer =  cabeza.GetLiga();
         int contador=0 ;
         while(pointer==null){
