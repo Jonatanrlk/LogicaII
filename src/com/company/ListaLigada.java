@@ -72,8 +72,14 @@ public class ListaLigada {
         //envia falso queriendo decir de que no se termino el recorrido de la lista
     }
 
-    public void recorrerLista(){
+    public int recorrerLista(){
         Nodo pointer = primero.GetLiga();
+
+        if(pointer==null){
+            pointer = primero;
+        }
+
+        return pointer.GetNumero();
 
 
     }
