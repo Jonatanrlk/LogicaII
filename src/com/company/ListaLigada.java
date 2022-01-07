@@ -21,6 +21,14 @@ public class ListaLigada {
         ultimo = primero;
     }
 
+    public boolean esVacia(){
+
+        if(primero.GetLiga()==null){
+            return true;
+            // retorna verdadero queriendo decir que no hay nodos ligados al primero
+        }
+        return false;
+    }
 
     // Metodos Getter de los atributos primero y ultimo
 
@@ -38,16 +46,35 @@ public class ListaLigada {
     // Metodos
 
     public Nodo anterior(Nodo xNodo){
+        Nodo anterior= null;//para este caso podemos asignarle tambien la direccion
+                            //del primero nodo osea (cab)
+        Nodo pointer = primero.GetLiga();
+        while (pointer != null){
 
-        return null;
+            if(xNodo == primero){
+                break;
+            }
+            anterior = pointer;
+            pointer = pointer.GetLiga();
+        }
+        return anterior;
+        // si retorna null es porque la direccion del nodo que
+        // entro como parametro no hace parte de la lista
+        // puede que sea de otra o es un nodo suelto.
     }
 
-    public boolean finDeRecorrido(Nodo xNodo){
+    public boolean finDeRecorrido(Nodo pNodo){
 
-        return true;
+        if(pNodo == null){
+            return true;
+        }
+        return false;
+        //envia falso queriendo decir de que no se termino el recorrido de la lista
     }
 
     public void recorrerLista(){
+        Nodo pointer = primero.GetLiga();
+
 
     }
 
