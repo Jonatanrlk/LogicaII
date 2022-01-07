@@ -48,6 +48,7 @@ public class ListaLigada {
     // Metodos
 
     public Nodo anterior(Nodo xNodo){
+
         Nodo anterior= null;//para este caso podemos asignarle tambien la direccion
                             //del primero nodo osea (cab)
         Nodo pointer = primero.GetLiga();
@@ -75,7 +76,8 @@ public class ListaLigada {
     }
 
     public int recorrerLista(){
-        Nodo x = primero.GetLiga();
+
+        x = x.GetLiga();
         // cada vez que el metodo se llame va ir de liga en liga
         // hasta que llega al nodo ultimo el cual tiene un null
         // en su liga
@@ -89,8 +91,6 @@ public class ListaLigada {
         return x.GetNumero();
         //cuando x sea igual a primero(cab) mandara el info que esta dentro de primero
         //el cual contiene 0.
-
-
     }
 
     public Nodo buscaDondeInsertar(int pDato){
