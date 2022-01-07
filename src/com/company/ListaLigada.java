@@ -12,6 +12,7 @@ public class ListaLigada {
 
     private Nodo primero ;
     private Nodo ultimo ;
+    private Nodo x ; // esta variable se va a utilizar para recorrer la lista
 
     // Metodo constructor
 
@@ -19,6 +20,7 @@ public class ListaLigada {
 
         primero = new Nodo(0);
         ultimo = primero;
+        x = primero;
     }
 
     public boolean esVacia(){
@@ -73,13 +75,20 @@ public class ListaLigada {
     }
 
     public int recorrerLista(){
-        Nodo pointer = primero.GetLiga();
+        Nodo x = primero.GetLiga();
+        // cada vez que el metodo se llame va ir de liga en liga
+        // hasta que llega al nodo ultimo el cual tiene un null
+        // en su liga
 
-        if(pointer==null){
-            pointer = primero;
+        if(x==null){
+            x = primero;
+            // cuando sea x igual a null , se le asignara la direccion
+            // del primer nodo la cual contiene un cero en el info
         }
 
-        return pointer.GetNumero();
+        return x.GetNumero();
+        //cuando x sea igual a primero(cab) mandara el info que esta dentro de primero
+        //el cual contiene 0.
 
 
     }
