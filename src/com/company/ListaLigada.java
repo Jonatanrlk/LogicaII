@@ -22,7 +22,16 @@ public class ListaLigada {
     }
 
 
+    // Metodos Getter de los atributos primero y ultimo
 
+    public Nodo getPrimero(){
 
+        return primero;
 
+    }
+
+    public Nodo getUltimo(){
+
+        return ultimo;
+    }
 }
