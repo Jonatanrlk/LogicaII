@@ -34,4 +34,49 @@ public class ListaLigada {
 
         return ultimo;
     }
+
+    // Metodos
+
+    public Nodo anterior(Nodo xNodo){
+
+        return null;
+    }
+
+    public boolean finDeRecorrido(Nodo xNodo){
+
+        return true;
+    }
+
+    public void recorrerLista(){
+
+    }
+
+    public Nodo buscaDondeInsertar(int pDato){
+
+        return null;
+    }
+
+    public void insertar(int pDato , Nodo y){
+
+    }
+
+    public void conectar(Nodo xNodo, Nodo y){
+
+    }
+
+    public Nodo buscarDato(int d, Nodo y){
+        return null;
+    }
+
+    public void borrar(Nodo xNodo , Nodo y){
+
+    }
+
+    public void desconectar(){
+
+    }
+
+    public void ordenaAscendentemente(){
+
+    }
 }
