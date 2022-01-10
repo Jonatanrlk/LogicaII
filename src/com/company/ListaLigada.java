@@ -52,27 +52,16 @@ public class ListaLigada {
         Nodo anterior= null;//para este caso podemos asignarle tambien la direccion
                             //del primero nodo osea (cab)
         Nodo pointer = primero.GetLiga();
-        while (pointer != null){
+        while (pointer != xNodo){
 
-            if(xNodo == primero){
-                break;
-            }
             anterior = pointer;
+
             pointer = pointer.GetLiga();
         }
         return anterior;
         // si retorna null es porque la direccion del nodo que
         // entro como parametro no hace parte de la lista
         // puede que sea de otra o es un nodo suelto.
-    }
-
-    public boolean finDeRecorrido(Nodo pNodo){
-
-        if(pNodo == null){
-            return true;
-        }
-        return false;
-        //envia falso queriendo decir de que no se termino el recorrido de la lista
     }
 
     public int recorrerLista(){
@@ -94,31 +83,114 @@ public class ListaLigada {
     }
 
     public Nodo buscaDondeInsertar(int pDato){
-
-        return null;
+        Nodo p = primero.GetLiga() ;
+        Nodo y = anterior(p);
+        while(p != null && p.GetNumero() < pDato){
+            y = p ;
+            p = p.GetLiga();
+        }
+        return y;
     }
 
     public void insertar(int pDato , Nodo y){
+        Nodo x ;
+        x = new Nodo(pDato);
+        conectar(x , y);
 
     }
 
     public void conectar(Nodo xNodo, Nodo y){
+        if(y != null)
+        {
+            x.SetLiga(y.GetLiga());
+            y.SetLiga(x);
+            if(y == ultimo){
+                ultimo = x;
+            }
+        }
+        else
+        {
+            x.SetLiga(primero);
+            if(primero==null){
+                ultimo = x;
+            }
+            primero = x;
+        }
 
     }
 
     public Nodo buscarDato(int d, Nodo y){
-        return null;
+        Nodo x ;
+        x = primero.GetLiga();
+        y = anterior(x);
+        while (x != null && x.GetNumero() != d){
+            y = x;
+            x = x.GetLiga();
+        }
+        return x;
     }
 
     public void borrar(Nodo xNodo , Nodo y){
+        if( xNodo == null){
+            System.out.println("dato no existe");
+        }
+        desconectar(x ,y);
 
     }
 
-    public void desconectar(){
-
+    public void desconectar(Nodo xNodo , Nodo yNodo){
+        if(xNodo != primero){
+            yNodo.SetLiga(xNodo.GetLiga());
+            if(xNodo == ultimo){
+                ultimo = yNodo ;
+            }
+        }else{
+            primero = primero.GetLiga();
+            if(primero == null){
+                ultimo = null;
+            }
+        }
     }
 
     public void ordenaAscendentemente(){
+        Nodo p , ap , menor , amenor , q , aq;
+
+        p = primero;
+
+        ap = anterior(p);
+        while (p != ultimo){
+            menor = p ;
+            amenor = ap;
+            q = p.GetLiga();
+            aq = p;
+            while (primero != null){
+                if(q.GetNumero() < menor.GetNumero()){
+                    menor = q ;
+                    amenor = aq;
+                }
+                aq = q ;
+                q = q.GetLiga();
+            }
+            if(menor == p ){
+                ap = p ;
+                p = p.GetLiga();
+            }else{
+                desconectar(menor , amenor);
+                conectar(menor, ap);
+                ap = menor;
+            }
+        }
 
     }
+
+//
+//    public boolean finDeRecorrido(Nodo pNodo){
+//
+//        if(pNodo == null){
+//            return true;
+//        }
+//        return false;
+//        //envia falso queriendo decir de que no se termino el recorrido de la lista
+//    }
+
 }
